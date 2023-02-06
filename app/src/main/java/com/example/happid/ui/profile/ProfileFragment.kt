@@ -29,7 +29,8 @@ import com.karumi.dexter.listener.multi.MultiplePermissionsListener
 class ProfileFragment : Fragment() {
 
     val binding: FragmentProfileBinding by lazy { FragmentProfileBinding.inflate(layoutInflater) }
-    val profileViewModel: ProfileViewModel by viewModels()
+    // TODO HERE WE ARE CREATING INSTANCE OF VIEWMODEL USING HILT
+    //val profileViewModel: ProfileViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,6 +44,13 @@ class ProfileFragment : Fragment() {
 
         binding.btnSubmit.setOnClickListener {
             if (validate()) {
+                alert("Your profile submitted successfully")
+                binding.edtFirstName.setText("")
+                binding.edtFirstName.setText("")
+                binding.edtPhone.setText("")
+                binding.edtLastName.setText("")
+                binding.edtPostCode.setText("")
+                // TODO From here we are able to submit our profile data on server but currently not added API so here is just API calling flow implemented
                 submitProfile()
             }
         }
@@ -98,8 +106,6 @@ class ProfileFragment : Fragment() {
                 isGranted = false
             }
         }).check()
-
-
         return isGranted
     }
 
@@ -112,9 +118,9 @@ class ProfileFragment : Fragment() {
             ""
         )
 
-        profileViewModel.start(info)
+      //  profileViewModel.start(info)
 
-        profileViewModel.userResponse.observe(viewLifecycleOwner, Observer {
+/*        profileViewModel.userResponse.observe(viewLifecycleOwner, Observer {
 
             when (it.status) {
                 Resource.Status.SUCCESS -> {
@@ -131,7 +137,7 @@ class ProfileFragment : Fragment() {
             }
 
 
-        })
+        })*/
 
 
     }

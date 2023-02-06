@@ -95,7 +95,6 @@ class LoginFragment : Fragment(), OnClickListener {
                     R.id.action_loginFragment_to_OTPVerificationFragment,
                     bundle
                 )
-
             }
         }
     }
@@ -104,7 +103,7 @@ class LoginFragment : Fragment(), OnClickListener {
         if (TextUtils.isEmpty(binding.edtMobileNumber.text.toString())) {
             alert("Please enter mobile number")
             return false
-        } else if (binding.edtMobileNumber.text.toString().length < 11) {
+        } else if (binding.edtMobileNumber.text.toString().trim().length < 10) {
             alert("Please enter valid mobile number")
             return false
         }
