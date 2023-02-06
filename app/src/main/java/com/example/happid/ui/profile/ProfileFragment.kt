@@ -30,7 +30,7 @@ class ProfileFragment : Fragment() {
 
     val binding: FragmentProfileBinding by lazy { FragmentProfileBinding.inflate(layoutInflater) }
     // TODO HERE WE ARE CREATING INSTANCE OF VIEWMODEL USING HILT
-    //val profileViewModel: ProfileViewModel by viewModels()
+    // val profileViewModel: ProfileViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -51,9 +51,10 @@ class ProfileFragment : Fragment() {
                 binding.edtLastName.setText("")
                 binding.edtPostCode.setText("")
                 // TODO From here we are able to submit our profile data on server but currently not added API so here is just API calling flow implemented
-                submitProfile()
+                //submitProfile()
             }
         }
+
         val pickMedia =
             registerForActivityResult(ActivityResultContracts.PickVisualMedia()) { uri ->
                 // Callback is invoked after the user selects a media item or closes the
