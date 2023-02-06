@@ -27,7 +27,6 @@ import com.karumi.dexter.listener.PermissionRequest
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener
 
 class ProfileFragment : Fragment() {
-
     val binding: FragmentProfileBinding by lazy { FragmentProfileBinding.inflate(layoutInflater) }
     // TODO HERE WE ARE CREATING INSTANCE OF VIEWMODEL USING HILT
     // val profileViewModel: ProfileViewModel by viewModels()
